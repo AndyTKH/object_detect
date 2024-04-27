@@ -165,8 +165,12 @@ else:
     #col1.image(orig_img)
 
     col2.write("Detected Objects :mag:")
-    pro_img  = Path(__file__).parent/'image/pro_img.jpg'
-    col2.image(pro_img)
+    pro_img = Path(__file__).parent / 'image/pro_img.jpg'
+    with pro_img.open('rb') as f:
+        col2.image(Image.open(f))
+    
+    #pro_img  = Path(__file__).parent/'image/pro_img.jpg'
+    #col2.image(pro_img)
     #col2.image('pro_img.jpg')
 
     st.write(f"### Detected 2 object(s):")

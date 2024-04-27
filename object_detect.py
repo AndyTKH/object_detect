@@ -5,6 +5,8 @@ from PIL import Image
 from io import BytesIO
 import base64
 from collections import Counter
+from pathlib import Path
+
 
 # Set page configuration
 st.set_page_config(layout="wide", page_title="Image Object Detection")

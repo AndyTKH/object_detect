@@ -73,9 +73,9 @@ def process_and_display_image(upload, filename):
     open_cv_image = open_cv_image[:, :, ::-1].copy()
 
     # Object detection settings
-    config_path = Path(__file__).parent/'yolo/yolov3.cfg'
-    weights_path = Path(__file__).parent/'yolo/yolov3.weights'
-    classes_file = Path(__file__).parent/'yolo/yolov3.txt'
+    config_path = str(Path(__file__).parent/'yolo/yolov3.cfg')
+    weights_path = str(Path(__file__).parent/'yolo/yolov3.weights')
+    classes_file = str(Path(__file__).parent/'yolo/yolov3.txt')
 
     
     #config_path = 'yolov3.cfg'

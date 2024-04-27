@@ -155,10 +155,12 @@ if my_upload is not None:
 else:
     col1, col2 = st.columns(2)
     col1.write("Original Image :camera:")
-    col1.image(Path(__file__).parent/'image/people_img.jpg')
+    orig_img = Path(__file__).parent/'image/people_img.jpg'
+    col1.image(orig_img)
 
     col2.write("Detected Objects :mag:")
-    col2.image(Path(__file__).parent/'image/pro_img.jpg')
+    pro_img  = Path(__file__).parent/'image/pro_img.jpg'
+    col2.image(pro_img)
     #col2.image('pro_img.jpg')
 
     st.write(f"### Detected 2 object(s):")

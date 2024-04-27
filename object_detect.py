@@ -157,8 +157,12 @@ if my_upload is not None:
 else:
     col1, col2 = st.columns(2)
     col1.write("Original Image :camera:")
-    orig_img = Path(__file__).parent/'image/people_img.jpg'
-    col1.image(orig_img)
+    
+    orig_img = Path(__file__).parent / 'image/people_img.jpg'
+    with orig_img.open('rb') as f:
+        col1.image(Image.open(f))
+    #orig_img = Path(__file__).parent/'image/people_img.jpg'
+    #col1.image(orig_img)
 
     col2.write("Detected Objects :mag:")
     pro_img  = Path(__file__).parent/'image/pro_img.jpg'

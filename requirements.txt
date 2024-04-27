@@ -2,3 +2,4 @@ opencv-python
 matplotlib
 cvlib
 streamlit
+libgl1-mesa-glx

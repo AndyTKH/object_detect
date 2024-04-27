@@ -18,7 +18,8 @@ def get_base64_encoded_image(image_path):
         return base64.b64encode(img_file.read()).decode('utf-8')
 
 def full_page_background_image_base64():
-    image_path = "wallpaper2.jpg"  # Update this path
+    image_path = Path(__file__).parent/'image/wallpaper2.jpg'
+    #image_path = "wallpaper2.jpg"  # Update this path
     encoded_image = get_base64_encoded_image(image_path)
     css = f"""
         <style>
@@ -70,9 +71,14 @@ def process_and_display_image(upload, filename):
     open_cv_image = open_cv_image[:, :, ::-1].copy()
 
     # Object detection settings
-    config_path = 'yolov3.cfg'
-    weights_path = 'yolov3.weights'
-    classes_file = 'yolov3.txt'
+    config_path = Path(__file__).parent/'yolo/yolov3.cfg'
+    weights_path = Path(__file__).parent/'yolo/yolov3.weights'
+    classes_file = Path(__file__).parent/'yolo/yolov3.txt'
+
+    
+    #config_path = 'yolov3.cfg'
+    #weights_path = 'yolov3.weights'
+    #classes_file = 'yolov3.txt'
 
     with open(classes_file, 'r') as f:
         classes = [line.strip() for line in f.readlines()]
@@ -149,10 +155,11 @@ if my_upload is not None:
 else:
     col1, col2 = st.columns(2)
     col1.write("Original Image :camera:")
-    col1.image('people_img.jpg')
+    col1.image(Path(__file__).parent/'image/people_img.jpg')
 
     col2.write("Detected Objects :mag:")
-    col2.image('pro_img.jpg')
+    col2.image(Path(__file__).parent/'image/pro_img.jpg')
+    #col2.image('pro_img.jpg')
 
     st.write(f"### Detected 2 object(s):")
     st.write("2 person(s)")

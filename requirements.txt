@@ -2,3 +2,4 @@ opencv-python
 matplotlib
 cvlib
 streamlit
+pillow==9.5

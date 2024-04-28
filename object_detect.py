@@ -15,8 +15,9 @@ st.write("## Object Detection in Images")
 st.write(":mag: Upload an image to detect objects. Detected objects will be highlighted with bounding boxes.")
 st.sidebar.write("## Upload and Analyze :gear:")
 
-# Set a flag to track if an image has been uploaded
-image_uploaded = False
+# Initialize session state
+if 'image_uploaded' not in st.session_state:
+    st.session_state.image_uploaded = False
 
 def get_base64_encoded_image(image_path):
     with open(image_path, "rb") as img_file:
@@ -156,9 +157,9 @@ my_upload = st.sidebar.file_uploader("Upload an image", type=["png", "jpg", "jpe
 
 if my_upload is not None:
     process_and_display_image(upload=my_upload, filename=my_upload.name)
-    image_uploaded = True
+    st.session_state.image_uploaded = True
 
-if not image_uploaded:
+if not st.session_state.image_uploaded:
     col1, col2 = st.columns(2)
     col1.write("Original Image :camera:")
     

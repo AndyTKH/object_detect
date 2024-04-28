@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 # Set page configuration
-st.set_page_config(layout="wide", page_title="Image Object Detection", page_icon= ':male-detective:' )
+st.set_page_config(layout="wide", page_title="Image Object Detection", page_icon=':male-detective:' )
 st.write("## Object Detection in Images")
 st.write(":mag: Upload an image to detect objects. Detected objects will be highlighted with bounding boxes.")
 st.sidebar.write("## Upload and Analyze :gear:")

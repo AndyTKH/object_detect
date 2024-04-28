@@ -7,15 +7,14 @@ import base64
 from collections import Counter
 from pathlib import Path
 
+# Set a flag to track if an image has been uploaded
+image_uploaded = False
 
 # Set page configuration
 st.set_page_config(layout="wide", page_title="Image Object Detection")
 st.write("## Object Detection in Images")
 st.write(":mag: Upload an image to detect objects. Detected objects will be highlighted with bounding boxes.")
 st.sidebar.write("## Upload and Analyze :gear:")
-
-# Set a flag to track if an image has been uploaded
-image_uploaded = False
 
 
 def get_base64_encoded_image(image_path):
